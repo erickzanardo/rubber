@@ -1,0 +1,29 @@
+{
+  "name": "rubber",
+  "version": "1.0.0",
+  "description": "HTML5 Multiplatform game engine",
+  "main": "./src/rubber.js",
+  "bin": {
+    "rubber": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickzanardo/rubber-js.git"
+  },
+  "keywords": [
+    "Game",
+    "Engine"
+  ],
+  "author": "Erick Zanardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erickzanardo/rubber-js/issues"
+  },
+  "homepage": "https://github.com/erickzanardo/rubber-js#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "commander": "^2.12.2"
+  }
+}
