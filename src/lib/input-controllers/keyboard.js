@@ -1,8 +1,18 @@
+const keyMap = {}
+
+const getKey = ({ key }) => key.toLowerCase()
+
 const attach = () => {
-  // TODO
+  document.addEventListener("keydown", evt => {
+    keyMap[getKey(evt)] = true
+  })
+
+  document.addEventListener("keyup", evt => {
+    keyMap[getKey(evt)] = false
+  })
 }
 
 export default {
   attach,
-  isKeyPressed: key => false
+  isKeyPressed: key => keyMap[key] === true
 }

@@ -20,10 +20,7 @@
     "url": "https://github.com/erickzanardo/rubber-js/issues"
   },
   "homepage": "https://github.com/erickzanardo/rubber-js#readme",
-  "devDependencies": {
-    "webpack": "^3.10.0"
-  },
   "dependencies": {
-    "commander": "^2.12.2"
+    "webpack": "^3.10.0"
   }
 }
