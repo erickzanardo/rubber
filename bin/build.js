@@ -1,12 +1,5 @@
-const { exec } = require("child_process");
+const { runRubberBin } = require("./utils")
 
 module.exports = () => {
-  exec("./node_modules/rubber/node_modules/.bin/webpack", (err, stdout, stderr) => {
-    if (err) {
-      return console.log(stdout)
-    }
-
-    console.log(stdout)
-    console.log("Rubber build complete")
-  })
+  runRubberBin("webpack").then(() => console.log("Rubber build complete"));
 }

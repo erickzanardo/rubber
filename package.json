@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/erickzanardo/rubber-js#readme",
   "dependencies": {
+    "serve": "^6.4.3",
     "webpack": "^3.10.0"
   }
 }

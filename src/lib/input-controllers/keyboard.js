@@ -1,6 +1,6 @@
 const keyMap = {}
 
-const getKey = ({ key }) => key.toLowerCase()
+const getKey = ({ code }) => code.toLowerCase()
 
 const attach = () => {
   document.addEventListener("keydown", evt => {

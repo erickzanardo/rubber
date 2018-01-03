@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 
-const build = require("./build.js")
+const build = require("./build")
+const serve = require("./serve")
 
-build()
+const [_, bin, task] = process.argv
+
+switch(task) {
+  case "serve":
+    return serve()
+  default:
+    return build()
+}
