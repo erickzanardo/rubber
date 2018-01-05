@@ -4,7 +4,7 @@ const Images = {
     image.onload = () => {
       resolve(image)
     }
-    image.src = `/assets/images/${imageName}`
+    image.src = `./assets/images/${imageName}`
   }),
   create: (width, height, render) => {
     const canvas = document.createElement("canvas")
