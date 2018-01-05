@@ -4,12 +4,17 @@ const GameEngine = {
   start: (canvas, gameLoop) => {
     console.log("Initializing Rubber");
 
-    const width = canvas.width;
-    const height = canvas.height;
+    const width = document.body.clientWidth;
+    const height = document.body.clientHeight;
+
+    canvas.width = width;
+    canvas.height = height;
 
     const graphics = canvas.getContext("2d");
 
     let time = now();
+
+    if (gameLoop.init) gameLoop.init(width, height)
 
     const tick = () => {
       // Clear screen

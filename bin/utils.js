@@ -1,14 +1,67 @@
-const { spawn } = require("child_process");
+const shell = require("shelljs");
+
+const homedir = process.cwd()
 
 module.exports = {
-  runRubberBin: (command, ...args) => new Promise((resolve, reject) => {
-    const s = spawn(`./node_modules/rubber/node_modules/.bin/${command}`, args)
+  rm: path => shell.rm("-rf", path),
+  cp: (from, to) => {
+    const result = shell.cp("-Rf", from, to)
 
-    s.stdout.on("data", data => console.log(data.toString()))
-    s.stderr.on("data", data => console.log(data.toString()))
-    s.on("exit", code => {
-      if (code == 0) resolve()
-      else reject()
-    })
-  })
+    if (result.stdout) {
+      console.log(result.stdout)
+    }
+
+    if (result.stderr) {
+      console.log(result.stderr)
+    }
+
+    return result
+  },
+
+  runRubber: command => {
+    const result = shell.exec(`rubber ${command}`)
+
+    if (result.stdout) {
+      console.log(result.stdout)
+    }
+
+    if (result.stderr) {
+      console.log(result.stderr)
+    }
+
+    return result
+  },
+  runRubber: command => {
+    const result = shell.exec(`rubber ${command}`)
+
+    if (result.stdout) {
+      console.log(result.stdout)
+    }
+
+    if (result.stderr) {
+      console.log(result.stderr)
+    }
+
+    return result
+  },
+  runRubberBin: (command, folder) => {
+    if (folder) {
+      shell.cd(folder)
+    }
+
+    const result = shell.exec(`${homedir}/node_modules/rubber/node_modules/.bin/${command}`)
+
+    if (result.stdout) {
+      console.log(result.stdout)
+    }
+
+    if (result.stderr) {
+      console.log(result.stderr)
+    }
+
+    // Reset location
+    shell.cd(homedir)
+
+    return result
+  }
 }

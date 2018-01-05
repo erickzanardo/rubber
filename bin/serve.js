@@ -1,6 +1,8 @@
-const { runRubberBin } = require("./utils")
+const { runRubber, runRubberBin } = require("./utils")
 
 module.exports = () => {
-  runRubberBin("serve", "public")
+  process.env.GAME_PLATFORM = "browser"
+  runRubber("build")
+  runRubberBin("serve public")
 }
 
