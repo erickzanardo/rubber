@@ -12,6 +12,7 @@ switch(task) {
   case "run":
     return run(param)
   case "build":
+    return build(param)
   default:
-    return build()
+    console.log("No task specified")
 }

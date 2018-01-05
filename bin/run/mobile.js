@@ -15,8 +15,7 @@ module.exports = platform => {
     runRubberBin(`cordova platform add ${platform}`, "./platforms/mobile")
   }
 
-  process.env.GAME_PLATFORM = platform
-  runRubber("build")
+  runRubber(`build ${platform}`)
 
   rm("./platforms/mobile/www/*")
 
