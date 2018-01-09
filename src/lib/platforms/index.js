@@ -4,5 +4,7 @@ export default {
   isBrowser: () => is("browser"),
   isMobile: () => is("android") || is("ios"),
   isAndroid: () => is("android"),
-  isIos: () => is("ios")
+  isIos: () => is("ios"),
+
+  isDebugging: () => !!process.env.DEBUG
 }

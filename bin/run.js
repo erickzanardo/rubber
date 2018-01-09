@@ -2,10 +2,10 @@ const fs = require("fs")
 
 const runMobile = require("./run/mobile")
 
-module.exports = platform => {
+module.exports = (platform, ...params) => {
   if (!fs.existsSync("./platforms")) fs.mkdirSync("./platforms")
 
   if (platform == "android" || platform == "ios") {
-    runMobile(platform)
+    runMobile(platform, ...params)
   }
 }

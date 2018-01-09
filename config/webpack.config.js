@@ -11,5 +11,5 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  plugins: [new webpack.EnvironmentPlugin(["GAME_PLATFORM"])]
+  plugins: [new webpack.EnvironmentPlugin(["GAME_PLATFORM", "DEBUG"])]
 };

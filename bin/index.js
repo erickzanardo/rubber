@@ -4,15 +4,15 @@ const build = require("./build")
 const serve = require("./serve")
 const run = require("./run")
 
-const [_, bin, task, param] = process.argv
+const [_, bin, task, ...params] = process.argv
 
 switch(task) {
   case "serve":
-    return serve()
+    return serve(...params)
   case "run":
-    return run(param)
+    return run(...params)
   case "build":
-    return build(param)
+    return build(...params)
   default:
     console.log("No task specified")
 }
