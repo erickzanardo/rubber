@@ -20,8 +20,10 @@ module.exports = (platform, ...params) => new Promise((resolve, reject) => {
     webpack(config).run((err, stats) => {
       if (err) {
         console.log("Could not build project", err)
+        reject(err)
       } else {
         console.log("Build complete!")
+        resolve()
       }
     })
   } else {

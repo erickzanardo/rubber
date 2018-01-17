@@ -17,12 +17,12 @@ module.exports = (platform, ...params) => {
     runRubberBin(`cordova platform add ${platform}`, "./platforms/mobile")
   }
 
-  build(platform, ...params).then(() => {
+  return build(platform, ...params).then(() => {
     rm("./platforms/mobile/www/*")
-  
+
     // TODO We must add the cordova.js to the index.html file
     cp("./public/*", "./platforms/mobile/www")
-  
+
     runRubberBin(`cordova run ${platform}`, "./platforms/mobile")
   })
 }
